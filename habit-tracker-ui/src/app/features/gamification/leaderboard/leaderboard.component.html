@@ -1,0 +1,27 @@
+<div class="leaderboard-page">
+    <div class="header-banner">
+      <h1 style="font-family: 'Roboto Mono';">🏆 Top Achievers</h1>
+      &nbsp;
+      <p>See who's climbing the leaderboard!</p>
+    </div>
+  
+    <table class="leaderboard-table">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Username</th>
+          <th>Level</th>
+          <th>XP</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of leaderboard; let i = index">
+          <td>#{{ i + 1 }}</td>
+          <td>{{ user.userName }}</td>
+          <td>Level {{ user.level }}</td>
+          <td>{{ user.xp }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

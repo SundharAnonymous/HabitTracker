@@ -1,0 +1,52 @@
+<div class="notification-create-page">
+    <div class="notification-create-container">
+      <div class="notification-image">
+        <!-- Replace with your own illustration image -->
+        <img src="assets/notification-illustration.svg" alt="Notification Illustration" />
+      </div>
+      <div class="notification-form-wrapper">
+        <mat-card class="notification-card">
+          <mat-card-title>
+            {{ notificationId ? 'Edit Notification' : 'Create Notification' }}
+          </mat-card-title>
+          <mat-card-content>
+            <form [formGroup]="notificationForm" (ngSubmit)="onSubmit()">
+              <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Message</mat-label>
+                <textarea matInput formControlName="message" required></textarea>
+                <mat-error *ngIf="notificationForm.get('message')?.hasError('required')">
+                  Message is required
+                </mat-error>
+              </mat-form-field>
+              
+              <div class="date-time-group">
+                <mat-form-field appearance="outline" class="half-width">
+                  <mat-label>Scheduled Date</mat-label>
+                  <input matInput [matDatepicker]="picker" formControlName="scheduledDate" required>
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                  <mat-error *ngIf="notificationForm.get('scheduledDate')?.hasError('required')">
+                    Scheduled date is required
+                  </mat-error>
+                </mat-form-field>
+                
+                <mat-form-field appearance="outline" class="half-width">
+                  <mat-label>Scheduled Time</mat-label>
+                  <input matInput [ngxTimepicker]="timepicker" formControlName="scheduledTime" readonly required>
+                  <ngx-material-timepicker #timepicker></ngx-material-timepicker>
+                  <mat-error *ngIf="notificationForm.get('scheduledTime')?.hasError('required')">
+                    Scheduled time is required
+                  </mat-error>
+                </mat-form-field>
+              </div>
+  
+              <button mat-raised-button color="accent" type="submit" class="full-width" [disabled]="notificationForm.invalid">
+                {{ notificationId ? 'Update Notification' : 'Create Notification' }}
+              </button>
+            </form>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,41 @@
+<div class="analytics-page">
+    <header class="analytics-header">
+      <h1>Analytics Dashboard</h1>
+      <p>Track your progress and see your habit performance at a glance</p>
+    </header>
+  
+    <!-- Chart -->
+    <div class="chart-container">
+      <canvas #analyticsChart></canvas>
+    </div>
+  
+    <!-- Analytics Table -->
+    <div class="analytics-table-container" *ngIf="analyticsData.length > 0; else noData">
+      <table class="analytics-table">
+        <thead>
+          <tr>
+            <th>Habit Name</th>
+            <th>Completed Days</th>
+            <th>Missed Days</th>
+            <th>Last Updated</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of analyticsData">
+            <td>{{ data.habitName }}</td>
+            <td>{{ parseProgressData(data.progressData).completedDays }}</td>
+            <td>{{ parseProgressData(data.progressData).missedDays }}</td>
+            <td>{{ data.lastUpdated | date:'short' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- No Data Message -->
+    <ng-template #noData>
+      <div class="no-data">
+        <p>No analytics data available.</p>
+      </div>
+    </ng-template>
+  </div>
+  

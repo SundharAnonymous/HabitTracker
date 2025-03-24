@@ -1,0 +1,83 @@
+/* Full page background with gradient overlay */
+.habit-form-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url('/assets/habit-bg.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    padding: 20px;
+  
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5); /* Dark overlay for contrast */
+      z-index: 1;
+    }
+  }
+  
+  /* Container to center the card and ensure proper spacing */
+  .habit-form-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  /* Material card styling for a modern look */
+  .habit-card {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  /* Layout for date and time fields */
+  .date-time-group {
+    display: flex;
+    gap: 10px;
+  
+    .half-width {
+      flex: 1;
+    }
+  }
+  
+  /* Ensure form fields take full width */
+  .full-width {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  /* Submit button styling */
+  .submit-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+  
+  /* Fade in animation for the card */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .date-time-group {
+      flex-direction: column;
+    }
+  }
+  

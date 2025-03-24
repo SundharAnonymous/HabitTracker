@@ -1,0 +1,48 @@
+<div class="gamification-page">
+    <header class="page-header">
+      <h1 style="font-family: 'Roboto Mono';">Level Up Your Journey</h1>
+      <p>Achieve your goals and unlock your full potential!</p>
+    </header>
+  
+    <div class="card-wrapper">
+      <mat-card class="status-card" *ngIf="gamificationData">
+        <div class="progress-wrapper">
+          <div class="progress-circle">
+            <div class="inner-circle">
+              <span class="xp-text">{{ gamificationData.xp }} XP</span>
+            </div>
+          </div>
+        </div>
+        <div class="info-section">
+          <h2>Level {{ gamificationData.level }}</h2>
+          <p>Keep progressing to earn new badges and rewards.</p>
+          <button mat-raised-button color="accent" routerLink="/gamification/leaderboard">
+            View Leaderboard
+          </button>
+        </div>
+        
+        <!-- 🏆 Earned Badges Section -->
+        <div class="badge-section" *ngIf="badges.length > 0">
+            <h3>🏆 Earned Badges</h3>
+            <table class="badge-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Badge Name</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let badge of badges; let i = index">
+                  <td>{{ i + 1 }}</td>
+                  <td>{{ badge.name }}</td>
+                  <td>{{ badge.description }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          
+      </mat-card>
+    </div>
+  </div>

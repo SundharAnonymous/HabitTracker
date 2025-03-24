@@ -1,0 +1,80 @@
+* {
+    font-family: 'Roboto Mono';
+  }
+  .mat-sidenav-content{
+    min-height: 100vh;
+  }
+
+
+.mat-toolbar {
+    background-color: #141e30 !important; /* Green color */
+    color: white !important; /* Text color */
+  }
+  /* Sidenav Styling */
+  .sidenav {
+    width: 250px;
+    background-color: #ffffff; /* Dark background */
+    color: white;
+    border-right: 1px solid #333;
+  }
+  
+  /* Menu Header with Logo */
+  .menu-header {
+    display: flex;
+    padding: 10px;
+    background: #2C3E50; /* Top background color */
+  }
+  
+  /* Adjust logo size */
+  .logo {
+    max-width: 150px;
+    padding: 6.8px;
+    height: auto;
+    background-color: white;
+  }
+  
+  /* Active Menu Item */
+  mat-nav-list a {
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  mat-nav-list a.active-menu {
+    background-color: #bdb299 !important; /* Change to desired active color */
+    color: white !important;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  
+  /* Content Area */
+  .content {
+    padding: 16px;
+    transition: margin-left 0.3s ease-in-out;
+  }
+  
+  /* Shift content when menu opens on mobile */
+  .content-shift {
+    margin-left: 250px;
+  }
+
+  .heading{
+    font-weight: bold;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .sidenav {
+      width: 250px;
+      position: absolute;
+      z-index: 1000;
+    }
+  
+    .content-shift {
+      margin-left: 0;
+    }
+  }
+  

@@ -1,0 +1,24 @@
+<div class="ai-page">
+  <header class="ai-header">
+    <h1>AI Insights</h1>
+    <p>Unlock personalized recommendations powered by cutting-edge AI</p>
+  </header>
+  
+  <div class="ai-content">
+    <mat-card class="ai-card">
+      <mat-card-header class="ai-card-header">
+        <mat-card-title>Today's Recommendation</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="ai-card-content">
+        <!-- Render parsed HTML content here -->
+        <div [innerHTML]="recommendation"></div>
+      </mat-card-content>
+      <mat-card-actions class="ai-card-actions">
+        <button mat-raised-button color="accent" (click)="fetchRecommendation()">
+          <mat-icon>refresh</mat-icon>
+          Refresh
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

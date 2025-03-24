@@ -1,0 +1,67 @@
+/* Overall page container with a subtle background gradient */
+.notification-create-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #89f7fe, #66a6ff);
+    padding: 20px;
+  }
+  
+  /* Container that holds both image and form sections */
+  .notification-create-container {
+    display: flex;
+    flex-direction: row;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  /* Left side: Image section */
+  .notification-image {
+    flex: 1;
+    background: #f0f8ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  
+  /* Right side: Form section */
+  .notification-form-wrapper {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .notification-card {
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  /* Full width for form fields */
+  .full-width {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  /* Responsive: on smaller screens, hide the image */
+  @media (max-width: 768px) {
+    .notification-create-container {
+      flex-direction: column;
+    }
+    .notification-image {
+      display: none;
+    }
+  }
+  

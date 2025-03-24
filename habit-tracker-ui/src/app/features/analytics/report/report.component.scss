@@ -1,0 +1,71 @@
+* {
+    font-family: 'Roboto Mono';
+  }
+  
+  .analytics-page {
+    padding: 30px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    color: #fff;
+    text-align: center;
+  
+    .analytics-header {
+      margin-bottom: 40px;
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+      }
+      p {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.85);
+      }
+    }
+  
+    .chart-container {
+      width: 80%;
+      max-width: 600px;
+      margin: auto;
+    }
+  
+    .analytics-table-container {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+    }
+  
+    .analytics-table {
+      width: 90%;
+      max-width: 700px;
+      border-collapse: collapse;
+      background: rgba(255, 255, 255, 0.95);
+      color: #333;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  
+      th, td {
+        padding: 12px 15px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+      }
+  
+      th {
+        background: #252525;
+        color: white;
+      }
+  
+      tr:last-child td {
+        border-bottom: none;
+      }
+    }
+  
+    .no-data {
+      margin-top: 50px;
+      p {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+  }
+  

@@ -1,0 +1,203 @@
+/* Overall page styling with a vivid gradient background */
+*{
+    font-family: 'Roboto Mono';
+}
+.gamification-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1d2671, #c33764);
+    padding: 30px;
+    color: #fff;
+    text-align: center;
+  
+    .page-header {
+      margin-bottom: 40px;
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+      }
+      p {
+        font-size: 1rem;
+        margin: 0;
+      }
+    }
+  
+    .card-wrapper {
+      width: 100%;
+      max-width: 500px;
+      mat-card.status-card {
+        background: rgba(255, 255, 255, 0.9);
+        color: #333;
+        font-family: Roboto Mono !important;
+        border-radius: 15px;
+        padding: 30px 20px;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+        &:hover {
+          transform: scale(1.02);
+        }
+  
+        .progress-wrapper {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 20px;
+          .progress-circle {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: conic-gradient(#13703d, #1a4b10);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2);
+            .inner-circle {
+              width: 130px;
+              height: 130px;
+              border-radius: 50%;
+              background: #fff;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+              .xp-text {
+                font-size: 1rem;
+                font-weight: bold;
+                color: #ff4b2b;
+              }
+            }
+          }
+        }
+  
+        .info-section {
+          h2 {
+            font-size: 1.5rem;
+            margin: 0;
+            font-weight: 600;
+            font-family: 'Roboto Mono';
+            color: #333;
+          }
+          p {
+            font-size: 1rem;
+            margin: 10px 0 20px;
+            color: #666;
+          }
+          button {
+            font-size: 1rem;
+            padding: 10px 20px;
+          }
+        }
+        .badge-section {
+            margin-top: 20px;
+            padding: 20px;
+            background: #1e1e1e;  // Darker background for contrast
+            border-radius: 8px;
+            text-align: center;
+          
+            h3 {
+              font-size: 1.5rem;
+              font-weight: bold;
+              color: #ffffff;
+              margin-bottom: 15px;
+            }
+          
+            .badge-table {
+              width: 100%;
+              border-collapse: collapse;
+              margin-top: 10px;
+          
+              th, td {
+                padding: 12px;
+                text-align: left;
+                border-bottom: 1px solid #444;
+              }
+          
+              th {
+                background: #333;
+                color: #ffffff;
+                font-weight: bold;
+              }
+          
+              td {
+                background: #222;
+                color: #ddd;
+              }
+          
+              tr:hover {
+                background: #292929;
+              }
+            }
+          }
+          
+          /* Responsive Design */
+          @media (max-width: 600px) {
+            .badge-table {
+              font-size: 0.9rem;
+            }
+          }
+          
+          
+          /* Responsive Tweaks */
+          @media (max-width: 600px) {
+            .badge-card {
+              width: 140px;
+              padding: 10px;
+            }
+          }
+          
+          
+          /* Responsive Fix */
+          @media (max-width: 600px) {
+            .badge-card {
+              width: 120px;
+              height: 140px;
+            }
+          }
+          
+          
+      }
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .page-header {
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+    .card-wrapper {
+      padding: 10px;
+      mat-card.status-card {
+        padding: 20px 15px;
+        .progress-wrapper {
+          .progress-circle {
+            width: 140px;
+            height: 140px;
+            .inner-circle {
+              width: 110px;
+              height: 110px;
+              .xp-text {
+                font-size: 1rem;
+              }
+            }
+          }
+        }
+        .info-section {
+          h2 {
+            font-size: 1.3rem;
+          }
+          p {
+            font-size: 0.95rem;
+          }
+        }
+      }
+    }
+  }
+  

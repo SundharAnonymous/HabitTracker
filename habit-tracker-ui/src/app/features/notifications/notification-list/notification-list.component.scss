@@ -1,0 +1,87 @@
+/* Overall page layout with a gradient background */
+*{
+    font-family: 'Roboto Mono';
+}
+.notifications-page {
+    padding: 30px;
+    background: linear-gradient(135deg, #f6d365, #fda085);
+    min-height: 100vh;
+    color: #333;
+  
+    .header-banner {
+      text-align: center;
+      margin-bottom: 30px;
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #000000;
+      }
+      p {
+        font-size: 1rem;
+        color: rgba(0, 0, 0, 0.8);
+      }
+    }
+  
+    .actions {
+      text-align: center;
+      margin-bottom: 20px;
+      button {
+        font-size: 1rem;
+        display: inline-flex;
+        align-items: center;
+        mat-icon {
+          margin-right: 5px;
+          font-size: 1.2rem;
+          font-family: 'Material Icons' !important;
+        }
+      }
+    }
+  
+    /* Grid layout for notifications */
+    .notifications-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+  
+    /* Styling individual notification cards */
+    .notification-card {
+      transition: transform 0.2s ease-in-out;
+      &:hover {
+        transform: translateY(-5px);
+      }
+      mat-card-header {
+        background: #fff;
+        border-bottom: 1px solid #ddd;
+      }
+      mat-card-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        font-family: 'Roboto Mono' !important;
+      }
+      mat-card-content {
+        font-size: 0.95rem;
+      }
+      mat-card-actions {
+        display: flex;
+        justify-content: flex-end;
+        button {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .header-banner h1 {
+      font-size: 2rem;
+    }
+    .header-banner p {
+      font-size: 1rem;
+    }
+    .actions button {
+      font-size: 0.9rem;
+    }
+  }
+  

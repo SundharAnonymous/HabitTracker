@@ -1,0 +1,139 @@
+* {
+    font-family: 'Roboto Mono';
+  }
+  
+  .habit-list-page {
+    /* Vivid gradient background as used in the gamification page */
+    background: linear-gradient(135deg, #1d2671, #c33764);
+    padding: 30px;
+    min-height: 100vh;
+    color: #fff;
+    text-align: center;
+  
+    .header-banner {
+      margin-bottom: 30px;
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #fff;
+        text-shadow: 0 2px 8px rgba(255, 255, 255, 0.6);
+      }
+      p {
+        font-size: 1rem;
+        opacity: 0.9;
+        margin: 0;
+      }
+    }
+    .actions {
+      margin-bottom: 30px;
+      button {
+        font-size: 1rem;
+        display: inline-flex;
+        align-items: center;
+        mat-icon {
+          margin-right: 5px;
+          font-size: 1.2rem;
+          font-family: 'Material Icons' !important;
+        }
+      }
+    }
+  
+    .habit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+  
+    .habit-card {
+      background: rgb(255, 255, 255);
+      border: 2px solid #000000;
+      border-radius: 15px;
+      padding: 30px 40px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      color: #000000;
+      text-align: left;
+      
+      &:hover {
+        transform: scale(1.02);
+      }
+  
+      mat-card-header {
+        text-align: center;
+        width: 100%;
+        padding: 20px;
+        left: -40px;
+        position: relative;
+        background: rgb(0, 56, 121);
+        mat-card-title {
+          font-size: 1.2rem;
+          color: #ffffff;
+        }
+        mat-card-subtitle {
+          font-size: 1rem;
+          color: #757575;
+        }
+      }
+  
+      mat-card-content {
+        padding: 16px;
+        p {
+          font-size: 1rem;
+          line-height: 1.5;
+        }
+      }
+  
+
+      mat-card-actions {
+        padding: 16px;
+        display: flex;
+        justify-content: flex-end;
+        button {
+          font-size: 1rem;
+          display: flex;
+          align-items: center;
+          color: #f44336; /* Delete button in red */
+          mat-icon {
+            margin-right: 4px;
+            font-family: 'Material Icons' !important;
+          }
+        }
+      }
+      .mat-checkbox-label {
+        color: white !important;
+      }
+    }
+  }
+
+
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .header-banner h1 {
+      font-size: 2rem;
+    }
+    .header-banner p {
+      font-size: 1rem;
+    }
+    .actions button {
+      font-size: 1rem;
+    }
+    .habit-card {
+      padding: 20px 25px;
+      mat-card-header {
+        mat-card-title {
+          font-size: 1.3rem;
+        }
+      }
+      mat-card-content {
+        p {
+          font-size: 1rem;
+        }
+      }
+      mat-card-actions {
+        button {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+  

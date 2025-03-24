@@ -1,0 +1,90 @@
+/* Full page background with a semi-transparent overlay */
+*{
+    font-family: 'Roboto Mono';
+}
+.register-page {
+    background: url('/assets/register-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5); // Semi-transparent overlay
+      z-index: 1;
+    }
+  }
+  
+  /* Centered registration card */
+  .register-container {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  .register-card {
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    background-color: #fff;
+  }
+  
+  /* Logo styling */
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  
+  .logo {
+    width: 80px;
+    height: auto;
+  }
+  
+  /* Full width styling for form fields and button */
+  .full-width {
+    width: 100%;
+  }
+  
+  mat-form-field {
+    margin-bottom: 1rem;
+  }
+  
+  /* Error message styling */
+  .error-message {
+    color: red;
+    margin-top: 0.5rem;
+  }
+  .logo {
+    width: 150px; // Increase to desired width (e.g., 150px, 200px, etc.)
+    height: auto;
+  }
+  
+  /* Footer styling */
+  .footer {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    a {
+      margin-left: 0.5rem;
+      text-decoration: none;
+      font-weight: bold;
+      color: #3f51b5;
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .register-card {
+      padding: 1.5rem;
+    }
+  }
+  

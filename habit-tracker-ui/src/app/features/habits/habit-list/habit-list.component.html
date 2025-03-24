@@ -1,0 +1,47 @@
+<div class="habit-list-page">
+    <!-- Header Banner -->
+    <div class="header-banner">
+      <h1 style="font-family: Roboto Mono;">My Habits</h1>
+      <p>Manage your habits and track your progress in style</p>
+    </div>
+    
+    <!-- Action Button -->
+    <div class="actions">
+      <button mat-raised-button color="primary" routerLink="/habits/create">
+        <mat-icon>add_circle</mat-icon>
+        Add New Habit
+      </button>
+    </div>
+    
+    <!-- Habit Cards Grid -->
+    <div class="habit-grid">
+      <mat-card class="habit-card" *ngFor="let habit of habits">
+        <mat-card-header>
+          <mat-card-title>{{ habit.title }}</mat-card-title>
+          <mat-card-subtitle>{{ habit.frequency }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ habit.description }}</p>
+          <!-- Reactive Form for completion status -->
+        </mat-card-content>
+        <mat-card-actions>
+        <div style="left: -18px; position: relative;" class="completion-status">
+            <form [formGroup]="completionForm">
+                <mat-checkbox 
+                [formControlName]="habit.id.toString()" 
+                (change)="markCompletion(habit.id)"
+                [disabled]="completionForm.controls[habit.id.toString()].disabled">
+                Completed Today
+                </mat-checkbox>
+            </form>
+        </div>
+          <button mat-button color="warn" (click)="onDeleteHabit(habit.id)">
+            <mat-icon>delete</mat-icon>
+            Delete
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+
+  

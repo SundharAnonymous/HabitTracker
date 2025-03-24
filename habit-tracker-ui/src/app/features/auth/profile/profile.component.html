@@ -1,0 +1,31 @@
+<div class="container">
+    <mat-card>
+      <h2>User Profile</h2>
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" type="email">
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Full Name</mat-label>
+          <input matInput formControlName="fullName" type="text">
+          <mat-error *ngIf="profileForm.get('fullName')?.hasError('required')">
+            Full Name is required
+          </mat-error>
+        </mat-form-field>
+  
+        <button mat-raised-button color="primary" type="submit" [disabled]="profileForm.invalid">
+          Save Changes
+        </button>
+      </form>
+  
+      <div *ngIf="errorMessage" class="error" style="color:red; margin-top: 10px;">
+        {{ errorMessage }}
+      </div>
+      <div *ngIf="successMessage" class="success" style="color:green; margin-top: 10px;">
+        {{ successMessage }}
+      </div>
+    </mat-card>
+  </div>
+  

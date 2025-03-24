@@ -1,0 +1,13 @@
+<ng-container *ngIf="showSidenav; else noSidenav">
+  <app-sidenav></app-sidenav>
+</ng-container>
+
+<ng-template #noSidenav>
+  <mat-toolbar>
+    <span>HABIT TRACKER</span>
+  </mat-toolbar>
+  <div class="content">
+    <app-loading></app-loading>
+    <router-outlet></router-outlet>
+  </div>
+</ng-template>
